@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Tracking Visualization</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    
+    <body>
+        <header>
+            <h1>Patient Management</h1>
+        </header>
+        <main>
+            <div class="container">
+                <div class="tab-container">
+                    <button class="tab-button active" onclick="openTab('all-patients')">Tất Cả Bệnh Nhân</button>
+                    <button class="tab-button" onclick="openTab('add-patient')">Thêm Bệnh Nhân</button>
+                    <button class="tab-button" onclick="openTab('edit-patient')">Chỉnh Sửa Bệnh Nhân</button>
+                    <button class="tab-button" onclick="openTab('delete-patient')">Xóa Bệnh Nhân</button>
+                </div>
+    
+                <div id="all-patients" class="tab-content active">
+                    <h2>Tất Cả Bệnh Nhân</h2>
+                    <table id="patient-list-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Tên</th>
+                                <th>Ngày Sinh</th>
+                                <th>Giới Tính</th>
+                                <th>Liên Hệ</th>
+                                <th>Số lần chẩn đoán</th>
+                                <th>Lần chẩn đoán gần nhất</th>
+                                <th>Kết quả chẩn đoán gần nhất</th>
+                            </tr>
+                        </thead>
+                        <tbody id="patient-list-body">
+                            </tbody>
+                    </table>
+                </div>
+    
+                <div id="add-patient" class="tab-content">
+                    <h2>Thêm Bệnh Nhân</h2>
+                    <form id="add-patient-form">
+                        <div class="form-group">
+                            <label for="add-id">ID:</label>
+                            <input type="text" id="add-id" name="id" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="add-name">Tên:</label>
+                            <input type="text" id="add-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="add-dob">Ngày Sinh:</label>
+                            <input type="text" id="add-dob" name="dob" placeholder="DD-MM-YYYY">
+                        </div>
+                        <div class="form-group">
+                            <label for="add-gender">Giới Tính:</label>
+                            <input type="text" id="add-gender" name="gender" placeholder="Nam/Nữ">
+                        </div>
+                        <div class="form-group">
+                            <label for="add-contact">Liên Hệ:</label>
+                            <input type="text" id="add-contact" name="contact">
+                        </div>
+                        <button type="submit">Thêm Bệnh Nhân</button>
+                        <div id="add-status" style="margin-top: 10px;"></div>
+                    </form>
+                </div>
+    
+                <div id="edit-patient" class="tab-content">
+                    <h2>Chỉnh Sửa Bệnh Nhân</h2>
+                    <label for="edit-patient-select">Chọn bệnh nhân để chỉnh sửa:</label>
+                    <select id="edit-patient-select">
+                        <option value="">-- Chọn bệnh nhân --</option>
+                        </select>
+                    <form id="edit-patient-form" style="margin-top: 20px; display: none;">
+                        <div class="form-group">
+                            <label for="edit-id">ID:</label>
+                            <input type="text" id="edit-id" name="id" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-name">Tên:</label>
+                            <input type="text" id="edit-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-dob">Ngày Sinh:</label>
+                            <input type="text" id="edit-dob" name="dob" placeholder="DD-MM-YYYY">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-gender">Giới Tính:</label>
+                            <input type="text" id="edit-gender" name="gender" placeholder="Nam/Nữ">
+                        </div>
+                        <div class="form-group">
+                            <label for="edit-contact">Liên Hệ:</label>
+                            <input type="text" id="edit-contact" name="contact">
+                        </div>
+                        <button type="submit">Lưu Thay Đổi</button>
+                        <div id="edit-status" style="margin-top: 10px;"></div>
+                    </form>
+                </div>
+    
+                <div id="delete-patient" class="tab-content">
+                    <h2>Xóa Bệnh Nhân</h2>
+                    <label for="delete-patient-select">Chọn bệnh nhân để xóa:</label>
+                    <select id="delete-patient-select">
+                        <option value="">-- Chọn bệnh nhân --</option>
+                        </select>
+                    <button id="delete-button" style="margin-top: 10px; background-color: #dc3545; color: white;" disabled>Xóa Bệnh Nhân</button>
+                    <div id="delete-status" style="margin-top: 10px;"></div>
+                </div>
+            </div>
+        </main>
+        <footer>
+           
+        </footer>
+        <script src="scripts.js"></script>
+</body>
+</html>

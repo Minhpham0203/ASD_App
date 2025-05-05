@@ -1,0 +1,269 @@
+/* CSS cơ bản để tạo layout và style */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+.logo-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  visibility: hidden;
+  width: 300px;
+  background-color: #FFFFFF;
+  color: #000000;
+  text-align: center;
+  border: 1px solid #000000;
+  border-radius: 0;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 16px;
+  font-weight: normal;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.logo-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.marquee-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #003366 0%, #005580 30%, #0077AA 70%, #0099CC 100%);
+  color: #FFFFFF;
+}
+.marquee-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #FFD700 0%, #FFBF00 50%, #FF9F00 100%);
+  z-index: 1;
+}
+.marquee {
+  position: relative;
+  padding-top: 3px;
+  overflow: hidden;
+}
+.marquee div {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: marquee 30s linear infinite;
+  font-style: italic;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: calc(18px * 1.5); 
+  letter-spacing: calc(18px * 0.02); 
+}
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.hover-effect:hover {
+  font-size: 46px !important;
+  letter-spacing: calc(46px * 0.02) !important;
+}
+
+.hover-container {
+  text-align: center;
+  background: linear-gradient(90deg, #003366 0%, #005580 30%, #0077AA 70%, #0099CC 100%);
+  padding: 20px;
+  border-radius: 10px;
+  line-height: calc(24px * 1.5);
+  letter-spacing: calc(24px * 0.02);
+  position: relative;
+  color: #FFD700;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 24px;
+  transition: all 0.3s ease;
+}
+.emoji-container {
+  display: inline;
+}
+.emoji {
+  opacity: 0;
+  display: inline-block;
+  transform: translateX(-20px);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.hover-container:hover .emoji-1 {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s;
+}
+.hover-container:hover .emoji-2 {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.4s;
+}
+.hover-container:hover .emoji-3 {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.6s;
+}
+
+.gradient-divider {
+  height: 3px;
+  background: linear-gradient(90deg, #FFD700 0%, #FFBF00 50%, #FF9F00 100%);
+  border: none;
+  margin-top: 70px;
+  margin-bottom: 0px;
+}
+header {
+  color: #003366;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+}
+main {
+  padding: 20px;
+}
+.container1 {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.container2 {
+  background-color: white;
+  margin-top: 5px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h2 {
+  color: #003366;
+  margin-top: 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #f2f2f2;
+}
+.form-group {
+  margin-bottom: 15px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+.form-group input[type="text"] {
+  width: calc(100% - 12px);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button {
+  font-weight: bold;
+  background-color: white;
+  color: #003366;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+.edit-button, .delete-button {
+  font-weight: bold;
+  background-color: #ffc107;
+  color: #333;
+  margin-right: 5px;
+}
+.delete-button {
+  font-weight: bold;
+  background-color: #dc3545;
+}
+.edit-button:hover {
+  font-weight: bold;
+  background-color: #e0a800;
+}
+.delete-button:hover {
+  font-weight: bold;
+  background-color: #c82333;
+}
+.tab-container {
+  font-weight: bold;
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+.tab-button {
+  font-weight: bold;
+  padding: 10px 15px;
+  border: none;
+  background-color: white ;
+  color: #003366;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  margin-right: 5px;
+}
+.tab-button.active {
+  background-color: #003366;
+  color: white;
+}
+.tab-content {
+  font-weight: bold;
+  display: none;
+  padding: 15px;
+  
+  border-radius: 0 0 5px 5px;
+}
+.tab-content.active {
+  display: block;
+}
+#patient-list-table {
+  margin-top: 20px;
+}
+#patient-list-table th, #patient-list-table td {
+  padding: 10px;
+}
+
+nav {
+  background-color: #f0f0f0;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  color: #007bff;
+}

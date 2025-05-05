@@ -1,0 +1,161 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex; /* Để các nút và container nằm trên một hàng (nếu muốn) */
+    flex-direction: column; /* Sắp xếp các phần tử bên trong container theo chiều dọc */
+    align-items: center; /* Căn giữa các phần tử theo chiều ngang */
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 46px;
+    text-transform: uppercase;
+    color: #003366 !important;
+    background: none !important;
+    -webkit-text-fill-color: #003366 !important;
+}
+
+#status, #output-status, #calibration-status {
+    margin-top: 10px;
+    font-style: italic;
+    color: #777;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#toggle-webcam {
+    background-color: #007bff; /* Màu xanh dương */
+    color: white;
+}
+
+#toggle-slideshow {
+    background-color: #6c757d; /* Màu xám */
+    color: white;
+}
+
+#calibration-ui {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#calibration-canvas {
+    border: 1px solid #ccc;
+    margin-top: 10px;
+}
+
+#prediction-canvas-container {
+    margin: 20px auto;
+}
+
+#prediction-canvas, #webgazerVideoFeed {
+    width: 320px; /* Giảm chiều rộng */
+    height: 240px; /* Giảm chiều cao */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#webcam-container {
+    position: relative;
+    width: 320px; /* Giảm chiều rộng */
+    height: 240px; /* Giảm chiều cao */
+    margin-top: 20px;
+    display: none; /* Ẩn mặc định */
+}
+
+#slideshow-container {
+    width: 400px;
+    height: 300px;
+    border: 1px solid #ccc;
+    margin: 20px auto;
+    overflow: hidden;
+    display: none; /* Ẩn mặc định */
+}
+
+#slideshow-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#fullscreen-slideshow {
+    display: none !important; /* Loại bỏ hoàn toàn chế độ toàn màn hình */
+}
+
+#fullscreen-image {
+    /* Các стили cho ảnh toàn màn hình không còn cần thiết */
+}
+
+#close-fullscreen {
+    /* Các стили cho nút đóng toàn màn hình không còn cần thiết */
+    display: none;
+}
+
+#patient-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%; /* Điều chỉnh độ rộng nếu cần */
+    position: relative;
+    font-size: 18px;
+    line-height: calc(18px * 1.5);
+    margin-bottom: calc(18px * 1);
+    letter-spacing: calc(18px * 0.02);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+nav {
+    background-color: #f0f0f0;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}

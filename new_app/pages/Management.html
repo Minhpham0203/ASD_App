@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASD Diagnosis: Manage</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👀</text></svg>">
+    <link rel="stylesheet" href="/css/Management.css">
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/eye-tracker">Eye Tracking</a></li>
+            <li><a href="/patients-page">Management</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>MANAGE</h1>
+    </header>
+    <main>
+        <div class="container1">
+            <div id="all-patients">
+                <h2>All patients</h2>
+                <table id="patient-list-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>DOB</th>
+                            <th>Gender</th>
+                            <th>Contact</th>
+                            <th>Total sessions</th>
+                            <th>Latest session</th>
+                            <th>Latest result</th>
+                        </tr>
+                    </thead>
+                    <tbody id="patient-list-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="container2">
+            <div class="tab-container">
+                <button class="tab-button" onclick="openTab('add-patient')">Add patient</button>
+                <button class="tab-button" onclick="openTab('edit-patient')">Edit patient</button>
+                <button class="tab-button" onclick="openTab('delete-patient')">Delete patient</button>
+            </div>
+
+            <div id="add-patient" class="tab-content">
+
+                <form id="add-patient-form">
+                    <div class="form-group">
+                        <label for="add-id">ID:</label>
+                        <input type="text" id="add-id" name="id" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-name">Name:</label>
+                        <input type="text" id="add-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="add-dob">DOB:</label>
+                        <input type="text" id="add-dob" name="dob" placeholder="DD-MM-YYYY">
+                    </div>
+                    <div class="form-group">
+                        <label for="add-gender">Gender:</label>
+                        <input type="text" id="add-gender" name="gender" placeholder="Male/ Female">
+                    </div>
+                    <div class="form-group">
+                        <label for="add-contact">Contact:</label>
+                        <input type="text" id="add-contact" name="contact">
+                    </div>
+                    <button type="submit">Add</button>
+                    <div id="add-status" style="margin-top: 10px;"></div>
+                </form>
+            </div>
+
+            <div id="edit-patient" class="tab-content">
+
+                <label for="edit-patient-select">Select a patient:</label>
+                <select id="edit-patient-select">
+                </select>
+                <form id="edit-patient-form" style="margin-top: 20px; display: none;">
+                    <div class="form-group">
+                        <label for="edit-id">ID:</label>
+                        <input type="text" id="edit-id" name="id" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-name">Name:</label>
+                        <input type="text" id="edit-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-dob">DOB:</label>
+                        <input type="text" id="edit-dob" name="dob" placeholder="DD-MM-YYYY">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-gender">Gender:</label>
+                        <input type="text" id="edit-gender" name="gender" placeholder="Male/ Female">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-contact">Contact:</label>
+                        <input type="text" id="edit-contact" name="contact">
+                    </div>
+                    <button type="submit">Save changes</button>
+                    <div id="edit-status" style="margin-top: 10px;"></div>
+                </form>
+            </div>
+
+            <div id="delete-patient" class="tab-content">
+
+                <label for="delete-patient-select">Select a patient to delete:</label>
+                <select id="delete-patient-select">
+                    <option value="">Select</option>
+                </select>
+                <button id="delete-button" style="margin-top: 10px; background-color: #dc3545; color: white;"
+                    disabled>Delete</button>
+                <div id="delete-status" style="margin-top: 10px;"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="/js/Management.js"></script>
+</body>
+
+</html>

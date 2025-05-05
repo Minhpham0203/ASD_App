@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theo Dõi Mắt và Slideshow Ảnh</title>
+    <link rel="stylesheet" href="/css/Eye_tracking.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/eye-tracker">Eye Tracking</a></li>
+            <li><a href="/patients-page">Management</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <h1>Diagnose via Eye Tracking</h1>
+        <div id="status">Đang khởi tạo...</div>
+        <label for="patient-select">Chọn bệnh nhân:</label>
+        <select id="patient-select"></select>
+
+        <div>
+            <button id="toggle-webcam">Bật Webcam</button>
+            <button id="toggle-slideshow">Bật Slideshow</button>
+        </div>
+
+        <div id="webcam-container" style="position: relative; width: 640px; height: 480px; margin-top: 20px;">
+            <canvas id="prediction-canvas" width="640" height="480" style="position: absolute; top: 0; left: 0; z-index: 1;"></canvas>
+            <video id="webgazerVideoFeed" autoplay playsinline style="position: absolute; top: 0; left: 0; width: 640px; height: 480px; z-index: 0;"></video>
+        </div>
+
+        <div id="slideshow-container" style="width: 400px; height: 300px; border: 1px solid #ccc; margin-top: 20px; display: none;">
+            <img id="slideshow-image" src="" alt="Ảnh Slideshow" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+
+        <div id="fullscreen-slideshow" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: black; display: none; justify-content: center; align-items: center; z-index: 1000;">
+            <img id="fullscreen-image" src="" alt="Ảnh Toàn Màn Hình" style="max-width: 95%; max-height: 95%; object-fit: contain;">
+            <button id="close-fullscreen" style="position: absolute; top: 20px; right: 20px; background: none; border: none; color: white; font-size: 24px; cursor: pointer;">&times;</button>
+        </div>
+
+        <div id="output-status" style="margin-top: 20px;"></div>
+    </div>
+</body>
+<script src="/js/webgazer.js" defer></script>
+<script src="/js/Eye_tracking.js" defer></script>
+</html>
